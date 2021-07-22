@@ -1,8 +1,7 @@
-import * as core from '@actions/core';
-import * as github from '@actions/github';
+import * as core from '@actions/core'
+import * as github from '@actions/github'
 
 function generateDockerTag(name: string): string {
-
   if (name === 'refs/heads/master') {
     return 'latest'
   }
@@ -11,7 +10,6 @@ function generateDockerTag(name: string): string {
 }
 
 function getBranchName(name: string | undefined) {
-
   if (!name) {
     throw new Error('name cannot be undefined')
   }
@@ -24,11 +22,10 @@ function getBranchName(name: string | undefined) {
 }
 
 async function main() {
-
   let branchName: string
   let dockerTag: string
 
-  switch(github.context.eventName) {
+  switch (github.context.eventName) {
     case 'pull_request':
       branchName = getBranchName(process.env.GITHUB_HEAD_REF)
       dockerTag = generateDockerTag(branchName)
