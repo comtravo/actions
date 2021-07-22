@@ -9319,7 +9319,7 @@ function main() {
                 dockerTag = generateDockerTag(branchName);
                 break;
             default:
-                branchName = getBranchName(process.env.GITHUB_REF);
+                branchName = getBranchName(github.context.ref);
                 dockerTag = generateDockerTag(branchName);
         }
         core.setOutput('currentBranch', branchName);
