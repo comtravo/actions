@@ -1,5 +1,5 @@
-name: 'Get Docker Tag'
-description: 'Get Docker Tag for a given branch name'
+name: 'Get current branch and Docker tag'
+description: 'Get current branch and Docker tag'
 author: 'Comtravo GmbH'
 outputs:
   dockerTag:
