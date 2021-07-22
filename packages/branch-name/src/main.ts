@@ -9,7 +9,7 @@ function generateDockerTag(name: string): string {
   return name.replace(/\//g, '_')
 }
 
-function getBranchName(name: string | undefined) {
+function getBranchName(name: string | undefined): string {
   if (!name) {
     throw new Error('name cannot be undefined')
   }
@@ -21,7 +21,7 @@ function getBranchName(name: string | undefined) {
   return name.replace('refs/heads/', '')
 }
 
-async function main() {
+async function main(): Promise<void> {
   let branchName: string
   let dockerTag: string
 

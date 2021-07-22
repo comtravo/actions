@@ -13,12 +13,20 @@
     "packages/*"
   ],
   "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-plugin-github": "^4.1.5",
+    "eslint-plugin-jest": "^24.4.0",
     "lerna": "^4.0.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   },
   "scripts": {
     "diff": "lerna diff",
     "format": "prettier --write packages/**/*.ts",
-    "format-check": "prettier --check packages/**/*.ts"
+    "format-check": "prettier --check packages/**/*.ts",
+    "lint": "eslint packages/**/*.ts",
+    "lint-fix": "eslint packages/**/*.ts --fix",
+    "build": "lerna run build",
+    "all": "yarn format && yarn lint && yarn build"
   }
 }
