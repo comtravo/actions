@@ -1,4 +1,4 @@
-dist/
-lib/
 node_modules/
-jest.config.js
+packages/*/node_modules/
+packages/*/lib/
+packages/glob/__tests__/_temp

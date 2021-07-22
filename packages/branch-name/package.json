@@ -1,0 +1,22 @@
+{
+  "name": "branch-name",
+  "version": "1.0.0",
+  "description": "Fetch branch name",
+  "main": "dist/index.js",
+  "repository": "git+https://github.com/comtravo/actions.git",
+  "author": "Comtravo GmbH",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc && ncc build --source-map ./lib/main.js -o dist"
+  },
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.0",
+    "@vercel/ncc": "^0.29.0",
+    "typescript": "^4.3.5"
+  }
+}
