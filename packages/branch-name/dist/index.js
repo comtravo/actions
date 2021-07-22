@@ -9304,6 +9304,9 @@ function getBranchName(name) {
     if (!name) {
         throw new Error('name cannot be undefined');
     }
+    if (name.match(/refs\/tags/)) {
+        return name.replace('refs/tags/', '');
+    }
     return name.replace('refs/heads/', '');
 }
 function main() {
