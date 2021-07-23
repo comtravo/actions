@@ -1,11 +1,29 @@
-name: 'Get current branch and Docker tag'
-description: 'Get current branch and Docker tag'
+name: 'Archive artifacts in S3'
+description: 'Push files to S3 and optionally generate a presigned link'
 author: 'Comtravo GmbH'
+inputs:
+  artifactPath:
+    description: Path to artifacts
+    required: true
+  bucketName:
+    description: S3 Bucket name
+    required: true
+  prefix:
+    description: S3 Bucket prefix
+    required: true
+  generatePresignedURL:
+    description: Generate presigned URL so that the contents of the S3 bucket can be viewed without AWS creds
+    required: false
+    default: 'false'
+  presignedURLTTLSeconds:
+    description: maximum duration for which the presigned URL is present
+    required: false
+    default: '604800' # 7 days
 outputs:
-  dockerTag:
-    description: The docker tag
-  currentBranch:
-    description: Current branch name
+  s3Link:
+    description: Link to artifact in S3
+  preSignedURL:
+    description: Presigned URL link
 
 runs:
   using: 'node12'

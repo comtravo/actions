@@ -6,9 +6,6 @@
   "author": "Comtravo GmbH",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "aws-sdk": "^2.952.0"
-  },
   "scripts": {
     "build": "tsc && ncc build --source-map ./lib/main.js -o dist"
   }
