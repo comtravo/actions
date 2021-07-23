@@ -1,0 +1,12 @@
+name: 'Get current branch and Docker tag'
+description: 'Get current branch and Docker tag'
+author: 'Comtravo GmbH'
+outputs:
+  dockerTag:
+    description: The docker tag
+  currentBranch:
+    description: Current branch name
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

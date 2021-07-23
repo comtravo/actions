@@ -1,12 +1,14 @@
 {
-  "name": "branch-name",
+  "name": "archive-artifacts-s3",
   "version": "1.0.0",
-  "description": "Fetch branch name",
+  "description": "Archive artifacts in S3 and optionally generate presigned links",
   "main": "dist/index.js",
-  "repository": "git+https://github.com/comtravo/actions.git",
   "author": "Comtravo GmbH",
   "license": "MIT",
   "private": true,
+  "dependencies": {
+    "aws-sdk": "^2.952.0"
+  },
   "scripts": {
     "build": "tsc && ncc build --source-map ./lib/main.js -o dist"
   }

@@ -13,6 +13,8 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@types/node": "^16.4.1",
+    "@vercel/ncc": "^0.29.0",
     "eslint": "^7.31.0",
     "eslint-plugin-github": "^4.1.5",
     "eslint-plugin-jest": "^24.4.0",
@@ -28,5 +30,9 @@
     "lint-fix": "eslint packages/**/*.ts --fix",
     "build": "lerna run build",
     "all": "yarn format && yarn lint && yarn build"
+  },
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
   }
 }
