@@ -21,11 +21,15 @@ async function main(): Promise<void> {
     )
 
     core.setOutput('s3Link', s3Link)
+    core.notice(s3Link)
 
     if (generatePresignedURL) {
-      await exec.exec(
+      const execOutput = await exec.getExecOutput(
         `aws s3 presign ${s3Link} --expires-in ${presignedURLTTLSeconds}`
       )
+
+      core.setOutput('s3PresignLink', execOutput.stdout)
+      core.notice(execOutput.stdout)
     }
   } catch (error) {
     core.setFailed(error.message)
