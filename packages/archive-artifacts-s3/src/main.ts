@@ -28,7 +28,7 @@ async function main(): Promise<void> {
         `aws s3 presign ${s3Link} --expires-in ${presignedURLTTLSeconds}`
       )
 
-      core.setOutput('s3PresignLink', execOutput.stdout)
+      core.setOutput('preSignedURL', execOutput.stdout)
       core.notice(execOutput.stdout)
     }
   } catch (error) {

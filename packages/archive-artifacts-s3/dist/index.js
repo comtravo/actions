@@ -1822,7 +1822,7 @@ function main() {
             core.notice(s3Link);
             if (generatePresignedURL) {
                 const execOutput = yield exec.getExecOutput(`aws s3 presign ${s3Link} --expires-in ${presignedURLTTLSeconds}`);
-                core.setOutput('s3PresignLink', execOutput.stdout);
+                core.setOutput('preSignedURL', execOutput.stdout);
                 core.notice(execOutput.stdout);
             }
         }
