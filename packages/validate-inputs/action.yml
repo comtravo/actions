@@ -1,0 +1,15 @@
+name: 'Validate Inputs'
+description: 'Validate inputs against a blacklist'
+author: 'Comtravo GmbH'
+
+inputs:
+  input:
+    description: Input to validate
+    required: true
+  blacklist:
+    description: CSV list of invalide inputs
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
