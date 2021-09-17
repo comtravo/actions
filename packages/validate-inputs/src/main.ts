@@ -19,6 +19,7 @@ async function main(): Promise<void> {
     core.info(`Input to validate against ${blacklist}`)
 
     if (blacklist.includes(input)) {
+      core.error(`Input: ${input} part of blacklist: ${blacklist}`)
       throw new Error(`Input: ${input} part of blacklist: ${blacklist}`)
     }
   } catch (error) {
