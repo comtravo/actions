@@ -11,6 +11,10 @@ inputs:
   prefix:
     description: S3 Bucket prefix
     required: true
+  acl:
+    description: ACL for objects copied to S3
+    required: false
+    default: bucket-owner-full-control
   generatePresignedURL:
     description: Generate presigned URL so that the contents of the S3 bucket can be viewed without AWS creds
     required: false

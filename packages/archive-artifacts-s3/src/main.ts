@@ -12,13 +12,14 @@ async function main(): Promise<void> {
     const prefix = core.getInput('prefix', {
       required: true
     })
+    const acl = core.getInput('acl', {
+      required: true
+    })
     const generatePresignedURL =
       core.getInput('generatePresignedURL') === 'true'
     const presignedURLTTLSeconds = core.getInput('presignedURLTTLSeconds')
     const s3Link = `s3://${bucketName}/${prefix}`
-    await exec.exec(
-      `aws s3 sync ${artifactPath} ${s3Link} --acl bucket-owner-full-control`
-    )
+    await exec.exec(`aws s3 sync ${artifactPath} ${s3Link} --acl ${acl}`)
 
     core.setOutput('s3Link', s3Link)
     core.notice(s3Link)
