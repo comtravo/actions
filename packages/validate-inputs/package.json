@@ -1,6 +1,6 @@
 {
   "name": "validate-inputs",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Fetch branch name",
   "main": "dist/index.js",
   "repository": "git+https://github.com/comtravo/actions.git",
