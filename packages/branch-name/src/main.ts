@@ -1,12 +1,12 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 
-function generateDockerTag(name: string): string {
-  if (name === 'refs/heads/master') {
+function generateDockerTag(branchName: string): string {
+  if (branchName === 'master') {
     return 'latest'
   }
 
-  return name.replace(/\//g, '_')
+  return branchName.replace(/\//g, '_')
 }
 
 function getBranchName(name: string | undefined): string {

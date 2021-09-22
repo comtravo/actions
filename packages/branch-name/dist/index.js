@@ -9324,11 +9324,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(7117));
 const github = __importStar(__nccwpck_require__(4005));
-function generateDockerTag(name) {
-    if (name === 'refs/heads/master') {
+function generateDockerTag(branchName) {
+    if (branchName === 'master') {
         return 'latest';
     }
-    return name.replace(/\//g, '_');
+    return branchName.replace(/\//g, '_');
 }
 function getBranchName(name) {
     if (!name) {
