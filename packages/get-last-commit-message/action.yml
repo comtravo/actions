@@ -1,0 +1,15 @@
+name: 'Get last commit message'
+
+description: 'Get last commit message'
+
+outputs:
+  commit-message:
+    description: "Random number"
+    value: ${{ steps.commit-message.outputs.message }}
+
+runs:
+  using: 'composite'
+  steps:
+    - id: commit-message
+      shell: bash
+      run: echo "::set-output name=message::$(git log -n 1 --pretty=format:"%s")"
